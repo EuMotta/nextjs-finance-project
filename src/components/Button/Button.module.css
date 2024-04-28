@@ -1,6 +1,3 @@
-.btnStyle {
-  @apply btn;
-}
 .button {
   @apply font-mono hover:text-secondary;
 }

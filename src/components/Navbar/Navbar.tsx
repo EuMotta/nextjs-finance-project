@@ -32,10 +32,7 @@ const Navbar: React.FC<NavbarProps> = ({ navLinks }) => {
             ))}
           </nav>
           <div>
-            {' '}
-            <Button btn href="/login">
-              Entrar
-            </Button>
+            <Button href="/login">Entrar</Button>
           </div>
         </div>
       </Container>

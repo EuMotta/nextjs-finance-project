@@ -11,6 +11,7 @@ const Form = ({ fetch }: FormProps) => {
 
   const onSubmit: SubmitHandler<FieldValues> = async (data) => {
     try {
+      data.operationType = data.operationType === 'true' ? true : false;
       const response = await axios.post('/api/cookies', data);
 
       if (response.status !== 200) {

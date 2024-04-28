@@ -1,6 +1,5 @@
 'use client';
-import React from 'react';
-import { FaPen } from 'react-icons/fa6';
+import { FaEye } from 'react-icons/fa';
 import { FcBearish, FcBullish } from 'react-icons/fc';
 
 import Button from '@/components/Button';
@@ -56,9 +55,7 @@ const Transactions = async ({ loading, error, data }: HookProps) => {
                   </td>
                   <td>{transaction.date}</td>
                   <td className="flex justify-center items-center">
-                    <Button btn icon={<FaPen />}>
-                      Editar
-                    </Button>
+                    <Button icon={<FaEye />}>Visualizar</Button>
                   </td>
                 </tr>
               );

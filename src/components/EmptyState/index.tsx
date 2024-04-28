@@ -34,14 +34,8 @@ const EmptyState: React.FC<EmptyStateProps> = ({
     >
       <Heading center title={title} subtitle={subtitle} />
       <div className="flex justify-center items-center gap-5">
-        {showReset && (
-          <Button btn onClick={() => reset && reset()}>
-            {label}
-          </Button>
-        )}
-        <Button btn onClick={() => router.push('/')}>
-          Voltar
-        </Button>
+        {showReset && <Button onClick={() => reset && reset()}>{label}</Button>}
+        <Button onClick={() => router.push('/')}>Voltar</Button>
       </div>
     </div>
   );

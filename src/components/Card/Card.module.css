@@ -1,0 +1,104 @@
+/* Card */
+.card_content {
+  @apply shadow-sm relative flex flex-col justify-between overflow-hidden p-5 rounded-xl border bg-base-100;
+}
+.card_content h3 {
+  @apply font-semibold tracking-tight text-xl mb-2;
+}
+.card_content p {
+  @apply text-sm;
+}
+/* Project Card */
+.projectCard_content {
+  @apply card border border-gray-700 rounded-md w-full bg-base-100 shadow-xl;
+}
+.projectCard_content .projectCard_button {
+  @apply cursor-pointer absolute h-full w-full;
+}
+.projectCard_content figure {
+  @apply object-cover w-full h-56 overflow-hidden p-2;
+}
+.projectCard_content img {
+  @apply object-cover w-full;
+}
+.projectCard_content .projectCard_body {
+  @apply card-body gap-5;
+}
+.projectCard_content .projectCard_body p {
+  @apply text-xs line-clamp-1;
+}
+.projectCard_content .projectCard_body .projectCard_techList {
+  @apply flex flex-wrap gap-x-2 gap-1;
+}
+.projectCard_content
+  .projectCard_body
+  .projectCard_techList
+  .projectCard_techList_tech {
+  @apply badge text-sm badge-primary;
+}
+/* Modular Card */
+.modularFirstCard {
+  @apply bg-base-300 p-5 border border-gray-800;
+}
+.modularSecondCard {
+  @apply bg-base-200 p-5 border border-gray-700;
+}
+.modularThirdCard {
+  @apply bg-base-100 p-5 border border-gray-600;
+}
+/* Education card */
+.education_content {
+  @apply relative p-5 mx-5;
+}
+.education_card {
+  @apply border-l px-2 transition-all flex gap-5 items-center relative;
+}
+.education_content .education_button {
+  @apply cursor-pointer;
+}
+.education_card::before {
+  content: '';
+  @apply bg-primary/50 absolute -left-8 top-0 transition-all w-2 h-2;
+}
+.education_card:hover::before {
+  @apply bg-primary;
+}
+.education_card:hover {
+  @apply border-primary transition-all;
+}
+.education_card:hover p,
+.education_card:hover h3,
+.education_card:hover h4 {
+  @apply text-primary;
+}
+
+/*  */
+
+.examples_card {
+  width: 200px; /* ou qualquer outra largura que você preferir */
+  height: 300px; /* ou qualquer outra altura que você preferir */
+  perspective: 1000px;
+}
+
+.examples_card_front,
+.examples_card_back {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: transform 0.8s;
+  backface-visibility: hidden;
+}
+
+.examples_card_back {
+  transform: rotateY(180deg);
+}
+
+.examples_card:hover .examples_card_front {
+  transform: rotateY(-180deg);
+}
+
+.examples_card:hover .examples_card_back {
+  transform: rotateY(0);
+}

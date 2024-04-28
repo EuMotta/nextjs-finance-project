@@ -18,6 +18,7 @@ interface State {
 export type Hook = {
   url: string;
   reverse: boolean;
+  id?: string;
 };
 type Action =
   | { type: 'FETCH_REQUEST' }
@@ -42,7 +43,7 @@ function reducer(state: State, action: Action) {
   }
 }
 
-export function useData({ url, reverse }: Hook) {
+export function useData({ url, reverse, id }: Hook) {
   const [state, dispatch] = useReducer(reducer, {
     loading: true,
     error: '',
@@ -53,10 +54,20 @@ export function useData({ url, reverse }: Hook) {
   const fetchData = useCallback(async () => {
     dispatch({ type: 'FETCH_REQUEST' });
     try {
-      const result = await fetch(url);
-      const data = await result.json();
-      console.log(data);
-      if (reverse && data.length > 1) {
+      let result;
+      if (id) {
+        result = await fetch(`${url}?id=${id}`);
+      } else {
+        result = await fetch(url);
+      }
+
+      let data = await result.json();
+
+      if (id && Array.isArray(data)) {
+        data = data[0];
+      }
+
+      if (reverse && Array.isArray(data) && data.length > 1) {
         const reverseData = data.reverse();
         dispatch({ type: 'FETCH_SUCCESS', payload: reverseData });
       } else {
@@ -69,7 +80,7 @@ export function useData({ url, reverse }: Hook) {
         dispatch({ type: 'FETCH_FAIL', payload: 'um erro ocorreu' });
       }
     }
-  }, [url, reverse]);
+  }, [url, reverse, id]);
 
   useEffect(() => {
     fetchData();

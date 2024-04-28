@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 
 import { json2xml } from 'xml-js';
 
-import currencyConverter from '@/utils/Conversions/currencyConverter';
+import { currencyConverter } from '@/utils/Conversions/currencyConverter';
 import dateConverter from '@/utils/Conversions/dateConverter';
 import { belowMinimumStock, isInStock, media } from '@/utils/Counts';
 

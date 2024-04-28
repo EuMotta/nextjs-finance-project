@@ -94,7 +94,6 @@ export default function Page() {
               className="input input-primary p-2 rounded border border-gray-300"
             />
             <Button
-              btn
               type="submit"
               className="bg-blue-500 text-white p-2 rounded"
             >
@@ -113,7 +112,6 @@ export default function Page() {
               className="input input-primary p-2 rounded border border-gray-300"
             />
             <Button
-              btn
               type="submit"
               className="bg-blue-500 text-white p-2 rounded"
             >
@@ -138,7 +136,6 @@ export default function Page() {
             className="flex flex-col gap-5"
           >
             <Button
-              btn
               type="submit"
               className="bg-blue-500 text-white p-2 rounded"
             >
@@ -160,7 +157,6 @@ export default function Page() {
               className="input input-primary p-2 rounded border border-gray-300"
             />
             <Button
-              btn
               type="submit"
               className="bg-blue-500 text-white p-2 rounded"
             >
