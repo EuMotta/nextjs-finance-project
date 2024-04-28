@@ -1,0 +1,70 @@
+.btnStyle {
+  @apply btn;
+}
+.button {
+  @apply font-mono hover:text-secondary;
+}
+.icon {
+  @apply flex items-center gap-2;
+}
+.link {
+  @apply btn-link;
+}
+.outline {
+  @apply btn-outline;
+}
+
+.glow_on_hover {
+  @apply bg-base-200 z-0 relative;
+}
+
+.glow_on_hover:before {
+  content: '';
+  background: linear-gradient(
+    45deg,
+    #ff0000,
+    #ff7300,
+    #fffb00,
+    #48ff00,
+    #00ffd5,
+    #002bff,
+    #7a00ff,
+    #ff00c8,
+    #ff0000
+  );
+  @apply absolute z-[-1];
+  top: -2px;
+  left: -2px;
+  background-size: 400%;
+  filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowing 20s linear infinite;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.glow_on_hover:hover:before {
+  opacity: 1;
+}
+
+.glow_on_hover:after {
+  z-index: -1;
+  content: '';
+  position: absolute;
+  @apply !bg-base-100 rounded z-[-1] w-full h-full top-0 left-0;
+}
+
+@keyframes glowing {
+  0% {
+    background-position: 0 0;
+  }
+
+  50% {
+    background-position: 400% 0;
+  }
+
+  100% {
+    background-position: 0 0;
+  }
+}
