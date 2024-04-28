@@ -1,10 +1,15 @@
 'use client';
 import React from 'react';
+import { FaPen } from 'react-icons/fa6';
+import { FcBearish, FcBullish } from 'react-icons/fc';
+
+import Button from '@/components/Button';
+import Section from '@/components/Section';
 
 import { currencyConverter } from '@/utils/Conversions/currencyConverter';
 
 import { HookProps } from '../../../../@Types/global';
-
+import styles from './Transactions.module.css';
 interface TransactionObject {
   id: number;
   name: string;
@@ -24,33 +29,43 @@ const Transactions = async ({ loading, error, data }: HookProps) => {
   }
   if (data.length > 0) {
     return (
-      <div>
-        <div className="overflow-x-auto">
-          <table className="table">
-            <thead>
-              <tr>
-                <th>Name</th>
-                <th>Value</th>
-                <th>Operation Type</th>
-                <th>Date</th>
-              </tr>
-            </thead>
-            <tbody>
-              {data.map((transaction: TransactionObject) => {
-                const convertedValue = currencyConverter(transaction.value);
-                return (
-                  <tr key={transaction.id}>
-                    <td>{transaction.name}</td>
-                    <td>{convertedValue}</td>
-                    <td>{transaction.operationType ? 'True' : 'False'}</td>
-                    <td>{transaction.date}</td>
-                  </tr>
-                );
-              })}
-            </tbody>
-          </table>
-        </div>
-      </div>
+      <Section className={styles.table_section}>
+        <table>
+          <thead className="">
+            <tr>
+              <th>Nome</th>
+              <th>Valor</th>
+              <th className="w-48 !text-center">Tipo de operação</th>
+              <th>Data</th>
+              <th className="w-48 !text-center">Opções</th>
+            </tr>
+          </thead>
+          <tbody>
+            {data.map((transaction: TransactionObject) => {
+              const convertedValue = currencyConverter(transaction.value);
+              return (
+                <tr key={transaction.id}>
+                  <td>{transaction.name}</td>
+                  <td>{convertedValue}</td>
+                  <td className="flex justify-center w-48 items-center">
+                    {transaction.operationType ? (
+                      <FcBullish size={20} />
+                    ) : (
+                      <FcBearish size={20} />
+                    )}
+                  </td>
+                  <td>{transaction.date}</td>
+                  <td className="flex justify-center items-center">
+                    <Button btn icon={<FaPen />}>
+                      Editar
+                    </Button>
+                  </td>
+                </tr>
+              );
+            })}
+          </tbody>
+        </table>
+      </Section>
     );
   }
 };

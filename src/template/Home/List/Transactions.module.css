@@ -1,0 +1,18 @@
+.table_section {
+  @apply overflow-x-auto;
+}
+.table_section table {
+  @apply min-w-full bg-white shadow-md rounded-lg overflow-hidden;
+}
+.table_section table thead {
+  @apply bg-neutral text-white;
+}
+.table_section table thead th {
+  @apply text-start p-4 uppercase font-semibold text-sm;
+}
+.table_section table tbody tr {
+  @apply hover:bg-neutral/20 border-b;
+}
+.table_section table tbody td {
+  @apply p-4 border-x;
+}
