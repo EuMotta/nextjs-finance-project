@@ -4,6 +4,7 @@ import Container from '@/components/Container';
 import Section from '@/components/Section';
 import { useData } from '@/Hooks/useData';
 import { Form, Transactions } from '@/template/Home';
+import Results from '@/template/Home/Results/Results';
 
 export default function Formulario() {
   const {
@@ -12,7 +13,7 @@ export default function Formulario() {
     error,
     data: transactions,
   } = useData({ url: '/api/cookiesget', reverse: true });
-  console.log(transactions);
+
   return (
     <Container>
       <Section>
@@ -24,6 +25,7 @@ export default function Formulario() {
             error={error}
             data={transactions}
           />
+          <Results data={transactions} loading={loading} />
         </div>
       </Section>
     </Container>

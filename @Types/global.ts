@@ -18,7 +18,7 @@ export type NavbarProps = {
 
 export type HookProps = {
   loading: boolean;
-  error: string;
+  error?: string;
   data: any;
   fetch: () => void;
 };
@@ -30,6 +30,10 @@ export type TransactionObject = {
   date: string;
 };
 
-export interface FormProps {
+export type FormProps = {
   fetch: () => void;
-}
+};
+export type PageChangeProps = {
+  first: number;
+  rows: number;
+};

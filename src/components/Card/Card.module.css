@@ -75,8 +75,8 @@
 /*  */
 
 .examples_card {
-  width: 200px; /* ou qualquer outra largura que você preferir */
-  height: 300px; /* ou qualquer outra altura que você preferir */
+  width: 200px;
+  height: 300px;
   perspective: 1000px;
 }
 

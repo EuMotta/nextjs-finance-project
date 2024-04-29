@@ -12,9 +12,14 @@ const Form = ({ fetch }: FormProps) => {
   const onSubmit: SubmitHandler<FieldValues> = async (data) => {
     try {
       data.operationType = data.operationType === 'true' ? true : false;
+
+      data.value = Number(data.value);
+
+      console.log('at', data);
       if (data.operationType === false) {
         data.value = -Math.abs(data.value);
       }
+      console.log('et', data);
       const response = await axios.post('/api/cookies', data);
 
       if (response.status !== 200) {
@@ -28,6 +33,7 @@ const Form = ({ fetch }: FormProps) => {
       alert(err.message);
     }
   };
+
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}

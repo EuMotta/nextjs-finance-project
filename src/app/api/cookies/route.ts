@@ -6,7 +6,7 @@ import Transaction from '@/models/Transaction';
 export async function POST(request: any) {
   const data = await request.json();
   const { name, value, date } = data;
-
+  console.log(data);
   try {
     let transactions: Transaction[] = [];
 

@@ -1,0 +1,6 @@
+.paginator {
+  @apply grid grid-cols-5 w-full;
+}
+.active {
+  @apply btn-primary;
+}

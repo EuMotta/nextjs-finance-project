@@ -4,17 +4,20 @@ import { FaEye } from 'react-icons/fa';
 import { FcBearish, FcBullish } from 'react-icons/fc';
 
 import Button from '@/components/Button';
+import Paginator from '@/components/Paginator/Paginator';
 import Section from '@/components/Section';
 
 import { currencyConverter } from '@/utils/Conversions/currencyConverter';
 
-import { HookProps, TransactionObject } from '../../../../@Types/global';
+import {
+  HookProps,
+  PageChangeProps,
+  TransactionObject,
+} from '../../../../@Types/global';
 import styles from './Transactions.module.css';
-
-const ITEMS_PER_PAGE = 5;
-
 const Transactions = ({ fetch, loading, error, data }: HookProps) => {
-  const [currentPage, setCurrentPage] = useState(1);
+  const [first, setFirst] = useState<number>(0);
+  const [rows, setRows] = useState<number>(4);
 
   if (loading) {
     return <p className="text-center">Carregando transações...</p>;
@@ -29,9 +32,11 @@ const Transactions = ({ fetch, loading, error, data }: HookProps) => {
       </div>
     );
   }
-  const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
-  const endIndex = startIndex + ITEMS_PER_PAGE;
 
+  const onPageChange = (event: PageChangeProps) => {
+    setFirst(event.first);
+    setRows(event.rows);
+  };
   return (
     <Section className={styles.table_section}>
       <div className="flex justify-center">
@@ -51,7 +56,7 @@ const Transactions = ({ fetch, loading, error, data }: HookProps) => {
         </thead>
         <tbody>
           {data
-            .slice(startIndex, endIndex)
+            .slice(first, first + rows)
             .map((transaction: TransactionObject) => {
               const convertedValue = currencyConverter(transaction.value);
               return (
@@ -84,23 +89,13 @@ const Transactions = ({ fetch, loading, error, data }: HookProps) => {
             })}
         </tbody>
       </table>
-      <div className="flex justify-between mt-4">
-        <Button
-          onClick={() => setCurrentPage(Math.max(currentPage - 1, 1))}
-          disabled={currentPage === 1}
-        >
-          Anterior
-        </Button>
-        {currentPage}
-        <Button
-          onClick={() => {
-            if (endIndex >= data.length) return;
-            setCurrentPage(currentPage + 1);
-          }}
-          disabled={endIndex >= data.length}
-        >
-          Próxima
-        </Button>
+      <div className="flex justify-center items-center mt-4">
+        <Paginator
+          first={first}
+          rows={rows}
+          onPageChange={onPageChange}
+          totalRecords={data.length}
+        />
       </div>
     </Section>
   );
