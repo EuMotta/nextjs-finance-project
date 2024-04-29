@@ -1,10 +1,9 @@
-import { NextApiRequest } from 'next';
 import { cookies } from 'next/headers';
-import { NextResponse } from 'next/server';
+import { NextRequest, NextResponse } from 'next/server';
 
 import Transaction from '@/models/Transaction';
 
-export async function GET(request: NextApiRequest) {
+export async function GET(request: NextRequest) {
   const url: string | undefined = request.url;
   if (!url) {
     return new Response('URL is undefined', { status: 400 });

@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable react-hooks/rules-of-hooks */
 import React from 'react';
 
@@ -9,8 +10,11 @@ import { useCalcData } from '@/Hooks/useCalculatorData';
 
 import { currencyConverter } from '@/utils/Conversions/currencyConverter';
 
-import { HookProps } from '../../../../@Types/global';
-
+export type HookProps = {
+  loading: boolean;
+  error?: string;
+  data: any;
+};
 const Results = ({ data }: HookProps) => {
   if (data.loading) {
     return <p className="text-center">Carregando transações...</p>;
