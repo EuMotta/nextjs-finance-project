@@ -1,24 +1,27 @@
 import React from 'react';
 import { FieldValues, SubmitHandler, useForm } from 'react-hook-form';
+import { toast } from 'react-toastify';
 
 import axios from 'axios';
 
-interface FormProps {
-  fetch: () => void;
-}
+import { FormProps } from '../../../../@Types/global';
+
 const Form = ({ fetch }: FormProps) => {
   const { register, handleSubmit } = useForm();
 
   const onSubmit: SubmitHandler<FieldValues> = async (data) => {
     try {
       data.operationType = data.operationType === 'true' ? true : false;
+      if (data.operationType === false) {
+        data.value = -Math.abs(data.value);
+      }
       const response = await axios.post('/api/cookies', data);
 
       if (response.status !== 200) {
         throw new Error('Erro ao enviar dados para a API');
       }
 
-      alert('Dados enviados com sucesso!');
+      toast.success('Transação adicionada!');
       fetch();
     } catch (error) {
       const err = error as Error;

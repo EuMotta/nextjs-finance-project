@@ -1,5 +1,5 @@
 .table_section {
-  @apply overflow-x-auto;
+  @apply overflow-x-auto flex flex-col gap-10;
 }
 .table_section table {
   @apply min-w-full bg-white shadow-md rounded-lg overflow-hidden;

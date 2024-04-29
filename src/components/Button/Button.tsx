@@ -2,7 +2,6 @@ import Link from 'next/link';
 import { MdArrowOutward } from 'react-icons/md';
 
 import styles from './Button.module.css';
-
 interface Button {
   children?: React.ReactNode;
   href?: string;
@@ -14,7 +13,9 @@ interface Button {
   outline?: boolean;
   target?: string;
   onClick?: () => void;
+  disabled?: boolean;
 }
+
 const Button = ({
   children,
   href,

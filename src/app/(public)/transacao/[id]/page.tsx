@@ -45,24 +45,23 @@ const Page = ({ params }: Props) => {
           </div>
           <div className="mb-4">
             <p className="font-semibold">Tipo de Operação:</p>
-            <p>
-              {transaction.operationType ? (
-                <p className="flex gap-2">
-                  <FcBullish size={20} /> Receita
-                </p>
-              ) : (
-                <p className="flex gap-2">
-                  <FcBearish size={20} /> Despeza
-                </p>
-              )}
-            </p>
+            {transaction.value > 0 && (
+              <p className="flex gap-2">
+                <FcBullish size={20} /> Receita
+              </p>
+            )}
+            {transaction.value < 0 && (
+              <p className="flex gap-2">
+                <FcBearish size={20} /> Despeza
+              </p>
+            )}
           </div>
           <div className="mb-4">
             <p className="font-semibold">Data:</p>
             <p>{transaction.date}</p>
           </div>
           <Button className="w-full btn-primary" onClick={() => fetchData()}>
-            aa
+            Atualizar
           </Button>
         </ModularFirstCard>
       </Container>

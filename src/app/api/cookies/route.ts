@@ -5,7 +5,7 @@ import Transaction from '@/models/Transaction';
 
 export async function POST(request: any) {
   const data = await request.json();
-  const { name, value, operationType, date } = data;
+  const { name, value, date } = data;
 
   try {
     let transactions: Transaction[] = [];
@@ -18,7 +18,6 @@ export async function POST(request: any) {
       transactions.length + 1,
       name,
       value,
-      operationType,
       date,
     );
 

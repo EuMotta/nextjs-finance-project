@@ -20,4 +20,16 @@ export type HookProps = {
   loading: boolean;
   error: string;
   data: any;
+  fetch: () => void;
 };
+
+export type TransactionObject = {
+  id: number;
+  name: string;
+  value: number;
+  date: string;
+};
+
+export interface FormProps {
+  fetch: () => void;
+}

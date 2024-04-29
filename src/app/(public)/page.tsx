@@ -12,13 +12,18 @@ export default function Formulario() {
     error,
     data: transactions,
   } = useData({ url: '/api/cookiesget', reverse: true });
-
+  console.log(transactions);
   return (
     <Container>
       <Section>
         <div className="grid justify-center items-center">
           <Form fetch={fetchData} />
-          <Transactions loading={loading} error={error} data={transactions} />
+          <Transactions
+            fetch={fetchData}
+            loading={loading}
+            error={error}
+            data={transactions}
+          />
         </div>
       </Section>
     </Container>
