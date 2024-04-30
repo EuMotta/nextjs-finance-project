@@ -22,7 +22,7 @@ const Page = ({ params }: Props) => {
     loading,
     error,
     data: transaction,
-  } = useData({ url: '/api/cookiesget', reverse: false, id: params.id });
+  } = useData({ url: '/api/cookies', reverse: false, id: params.id });
   if (loading) {
     return <div>Carregando...</div>;
   }

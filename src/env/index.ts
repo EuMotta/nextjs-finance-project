@@ -1,3 +1,8 @@
+/* 
+  Pode ser adicionado variaveis de ambiente de forma segura,
+  para isso é necessário criar um arquivo .env.local
+  e adicionar as variaveis de ambiente.
+*/
 import zod from 'zod';
 
 const envSchema = zod.object({

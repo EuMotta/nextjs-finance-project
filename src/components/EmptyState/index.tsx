@@ -1,3 +1,19 @@
+/*
+  Componente EmptyState
+
+  Renderiza uma mensagem de aviso caso aconteça algum erro na página ou caso acesse uma rota não existente.
+  Pode ser utilizado para filtrar qualquer tipo de erro ou problema, mantendo um padrão no tratamento de erros.
+
+  O componente pode receber um título, um subtítulo e um botão de reset.
+
+  O título e o subtítulo são opcionais, mas caso não sejam passados, o componente renderiza um título padrão.
+
+  O botão de reset é opcional, mas caso seja passado, o componente renderiza um botão de reset.
+
+  O reset tem o objetivo de tentar novamente renderizar a página.
+
+*/
+
 'use client';
 
 import { useRouter } from 'next/navigation';

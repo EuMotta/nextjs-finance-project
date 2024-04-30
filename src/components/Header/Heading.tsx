@@ -1,3 +1,11 @@
+/*
+  Componente Heading
+
+  Renderiza a parte superior de um alerta. Utilizado no momento pelo EmptyState.
+
+  O CSS do card está em './Card.module.css'.
+*/
+
 'use client';
 
 interface HeadingProps {

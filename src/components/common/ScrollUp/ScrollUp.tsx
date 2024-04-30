@@ -1,3 +1,12 @@
+/*
+  Componente ScrollUp
+
+  Renderiza um botão no canto inferior direito da tela quando o usuário rola a página.
+  Ao clicar no botão, ele é encaminhado para o topo.
+
+  O CSS do ScrollUp está em './ScrollUp.module.css'.
+*/
+
 'use client';
 
 import { useState, useEffect } from 'react';

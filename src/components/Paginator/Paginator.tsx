@@ -1,4 +1,10 @@
-import React from 'react';
+/*
+  Componente Paginator
+
+  Renderiza um paginador com botões de navegação. Pode ser utilizado principalmente para listas grandes.
+
+  O CSS do Paginator está em './Paginator .module.css'.
+*/
 import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
 
 import { PageChangeProps } from '../../../@Types/global';

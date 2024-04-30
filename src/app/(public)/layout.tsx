@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 
+import Footer from '@/components/Footer';
 import Header from '@/components/Header/Header';
 
 export const metadata: Metadata = {
@@ -25,7 +26,10 @@ export default function PublicLayout({
       <div className="sticky top-0">
         <Header />
       </div>
-      <div>{children}</div>
+      <div className="min-h-[80vh]">{children}</div>
+      <div className="sticky bottom-0">
+        <Footer />
+      </div>
     </div>
   );
 }

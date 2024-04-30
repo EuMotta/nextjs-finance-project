@@ -1,3 +1,7 @@
+/* 
+  Conversor para moeda local
+*/
+
 export function currencyConverter(amount: number) {
   const numberAmount = Number(amount);
   if (isNaN(numberAmount)) {

@@ -1,3 +1,7 @@
+/* 
+  Contadores para realizar calculos mais comuns em projetos.
+*/
+
 export function isInStock(data: number) {
   return data > 0 ? true : false;
 }

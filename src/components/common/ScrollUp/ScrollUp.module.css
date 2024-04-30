@@ -2,7 +2,7 @@
   position: fixed;
   bottom: 20px;
   right: 20px;
-  @apply btn p-3;
+  @apply btn p-3 z-50;
   cursor: pointer;
   transition:
     opacity 0.3s,

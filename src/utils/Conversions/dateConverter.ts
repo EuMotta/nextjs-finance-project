@@ -1,3 +1,7 @@
+/* 
+  Conversor para data local.
+*/
+
 interface DateProps {
   date: Date;
   type?: 'date' | 'time' | 'date_time';

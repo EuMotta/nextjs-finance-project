@@ -12,7 +12,7 @@ export default function Formulario() {
     loading,
     error,
     data: transactions,
-  } = useData({ url: '/api/cookiesget', reverse: true });
+  } = useData({ url: '/api/cookies', reverse: true });
 
   return (
     <Container>

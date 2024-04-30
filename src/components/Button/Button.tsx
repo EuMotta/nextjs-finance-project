@@ -1,3 +1,13 @@
+/*
+  Componente Button
+
+  Renderiza um botão comum, um link ou âncora com base nas propriedades fornecidas.
+
+  Cada propriedade do botão é opcional.
+
+  O CSS do botão está em './Button.module.css'.
+*/
+
 import Link from 'next/link';
 import { MdArrowOutward } from 'react-icons/md';
 

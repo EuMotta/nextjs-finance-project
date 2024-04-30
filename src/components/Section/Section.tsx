@@ -1,3 +1,11 @@
+/*
+  Componente Section
+
+  Renderiza a sessão de cada parte da página, o que pode ajudar a padronizar cada sessão da tela ou componente.
+
+  O CSS da Section está em './Section.module.css'.
+*/
+
 import { ForwardedRef, HTMLAttributes, forwardRef } from 'react';
 
 import styles from './Section.module.css';

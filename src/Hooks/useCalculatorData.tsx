@@ -1,3 +1,7 @@
+/* 
+  Hooke para efetuar os calculos dos dados retornados das transações
+*/
+
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { media, sum } from '@/utils/Counts';
 

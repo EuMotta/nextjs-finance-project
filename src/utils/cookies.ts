@@ -1,3 +1,7 @@
+/* 
+  Estruturas para manipulação de cookies
+*/
+
 'use server';
 import { cookies } from 'next/headers';
 

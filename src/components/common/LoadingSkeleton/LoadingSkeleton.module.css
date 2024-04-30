@@ -1,3 +1,15 @@
+.loading_section {
+  @apply w-full prose h-screen items-center flex flex-col justify-center;
+}
+.loading_section .loading_content {
+  @apply flex gap-5 justify-center items-center;
+}
+.loading_section .loading_content .loading_loading {
+  @apply flex flex-col gap-20  justify-center items-center;
+}
+.loading_section .loading_content .loading_loading h1 {
+  @apply text-center;
+}
 .kinetic {
   height: 80px;
   position: relative;

@@ -1,10 +1,10 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-
 /* 
   Exemplo de Hook para receber os dados do usuário
   url: endereço da api
   reverse: booleano para inverter a lista
 */
+
+/* eslint-disable @typescript-eslint/no-explicit-any */
 
 'use client';
 import { useReducer, useEffect, useCallback } from 'react';

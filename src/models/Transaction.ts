@@ -1,3 +1,7 @@
+/* 
+  Classe para representar uma transação.
+*/
+
 class Transaction {
   id: number;
   name: string;
